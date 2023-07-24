@@ -10,12 +10,12 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     # Page title and team members
-    st.title("Hostel Finder 🏡")
-    st.subheader("_Project by team: Let Us(Isha Hitang, Priyanka Sinha, Sahishna Budhathoki)")
+    st.markdown("<h1 style='text-align: center; color: teal;'>Hostelmanu</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: red;'>About Us</h2>", unsafe_allow_html=True)
     # Home page content
     st.write("Welcome to the Hostel Finder application!🙏")
     st.markdown("The project is a **hostel finder** application designed to assist **:violet[college students]** in **__[finding suitable hostels near their college__** that fit their **:blue[budget and room-sharing preferences]**. It provides a user-friendly interface where students can input their college name, preferred room type (**:orange[__single, 2-sharing, or 3-sharing__)]**, and **:green[price range.]**")
-    st.caption("The Fisebase serves as the database and Authenticaton for the application.💾")
+    st.caption("Copyright © 2023 Hostelmandu. All rights reserved. This application is designed and developed by Team Let Us: Isha Hitang, Priyanka Sinha, and Sahishna Budhathoki.  For educational purposes only.", unsafe_allow_html=True)
 with col2:
     def load_lottieurl(url: str):
         r = requests.get(url)
@@ -33,6 +33,7 @@ with col2:
         width=500,
         key=None,
     )
+
 # Initialize Firebase configuration
 firebaseConfig = {
   'apiKey': "AIzaSyBwdU7h0etn8hQ955FayCHp17y493izszE",
