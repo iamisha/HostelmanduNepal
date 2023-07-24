@@ -49,7 +49,7 @@ def main():
 
     # Display hostel information
     if hostel_info is not None:
-        st.markdown("<h3 style='text-align: center; color: red;'>Hostel Information:</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: aquamarine;'>Hostel Information:</h3>", unsafe_allow_html=True)
         location = hostel_info.get("location", "")
         st.info(f"Nearest College: {college}")
         st.info(f"Location: {location}")
@@ -61,7 +61,7 @@ def main():
 
         with col2:
             # Update email
-            st.markdown("<h3 style='text-align: center; color: red;'>Update Email</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: aquamarine;'>Update Email</h3>", unsafe_allow_html=True)
             new_email = st.text_input("Enter new email:",value=db.child("colleges").child(college).child("hostels").child(selected_hostel).child("contact_email").shallow().get().val())
             if st.button("Update Email",disabled= block_access):
                 update_email(selected_hostel,college, new_email)
@@ -80,7 +80,7 @@ def main():
                 st.experimental_rerun()
         with col1:
             # Update price
-            st.markdown("<h3 style='text-align: center; color: red;'>Update Room Details</h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: aquamarine;'>Update Room Details</h3>", unsafe_allow_html=True)
             room_type = st.selectbox("Select room type:", ["1_person", "2_sharing", "3_sharing"])
             current_price = rooms_info.get(room_type, {}).get("price", 0)
             new_price = st.number_input("Enter the new price:", step=500, value=current_price)
