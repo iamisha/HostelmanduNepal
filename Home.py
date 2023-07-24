@@ -10,7 +10,7 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     # Page title and team members
-    st.markdown("<h1 style='text-align: center; color: teal;'>Hostelmanu</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: teal;'>Hostelmandu</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center; color: yellow;'>About Us</h3>", unsafe_allow_html=True)
     # Home page content
     st.write("Welcome to the Hostel Finder application!🙏")
