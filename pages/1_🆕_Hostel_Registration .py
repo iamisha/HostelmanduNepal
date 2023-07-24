@@ -1,19 +1,8 @@
 import pyrebase
 import streamlit as st
+from firebase_handler.database_handler import insert_data_to_database
 
-# firebase
-firebaseConfig = {
-  'apiKey': "AIzaSyBwdU7h0etn8hQ955FayCHp17y493izszE",
-  'authDomain': "hostelmandunepal-e2d8b.firebaseapp.com",
-  'databaseURL': "https://hostelmandunepal-e2d8b-default-rtdb.firebaseio.com/",
-  'projectId': "hostelmandunepal-e2d8b",
-  'storageBucket': "hostelmandunepal-e2d8b.appspot.com",
-  'messagingSenderId': "819533083882",
-  'appId': "1:819533083882:web:f3d783c52c85e5acea5393",
-  'measurementId': "G-KL2YP4EWRP"
-}
-firebase = pyrebase.initialize_app(firebaseConfig)
-db = firebase.database()
+
 if st.session_state.signout:
         st.success('You are logged in as ' + st.session_state.username +", Welcome!", icon="✅")
         st.sidebar.text(f"Email id: {st.session_state.useremail}")
@@ -25,43 +14,6 @@ if st.session_state.signout:
 else:
     st.warning('Please login first', icon="⚠️")
 
-def insert_data_to_database(data):
-    hostel_name = data[0]
-    college = data[1]
-    location = data[2]
-    gender = data[9]
-    email = data[10]
-    userid = data[11]
-
-    hostel_data = {
-        "hostel_name": hostel_name,
-        "location": location,
-        "gender": gender,
-        "contact_email": email,
-        "registered_by": userid
-    }
-
-    db.child("colleges").child(college).child("hostels").child(hostel_name).set(hostel_data)
-
-    room_data = {
-        "1_person": {
-            "price": data[3],
-            "capacity": data[6],
-            "availability": True
-        },
-        "2_sharing": {
-            "price": data[4],
-            "capacity": data[7],
-            "availability": True
-        },
-        "3_sharing": {
-            "price": data[5],
-            "capacity": data[8],
-            "availability": True
-        }
-    }
-
-    db.child("colleges").child(college).child("hostels").child(hostel_name).child("rooms info").set(room_data)
 
 def main():
     st.markdown(
@@ -73,7 +25,7 @@ def main():
     college = st.text_input("Enter Nearest College:")
     location = st.text_input("Enter Location:")
     Email = st.text_input("Contact Email ID:")
-    gender = st.selectbox("Select your gender:", ["Male", "Female"])
+    gender = st.selectbox("Hostel Available For:", ["Males", "Females", "Any"])
 
     col1, col2, col3 = st.columns([1, 1, 1])
 

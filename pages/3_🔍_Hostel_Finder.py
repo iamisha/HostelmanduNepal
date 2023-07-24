@@ -4,6 +4,7 @@ import email, smtplib, ssl
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from firebase_handler.database_handler import db
 
 
 
@@ -17,21 +18,6 @@ if st.session_state.signout:
             st.session_state.useremail = ''
 else:
     st.warning('Please login first', icon="⚠️")
-
-# Firebase configuration
-# Initialize Firebase configuration
-firebaseConfig = {
-  'apiKey': "AIzaSyBwdU7h0etn8hQ955FayCHp17y493izszE",
-  'authDomain': "hostelmandunepal-e2d8b.firebaseapp.com",
-  'databaseURL': "https://hostelmandunepal-e2d8b-default-rtdb.firebaseio.com/",
-  'projectId': "hostelmandunepal-e2d8b",
-  'storageBucket': "hostelmandunepal-e2d8b.appspot.com",
-  'messagingSenderId': "819533083882",
-  'appId': "1:819533083882:web:f3d783c52c85e5acea5393",
-  'measurementId': "G-KL2YP4EWRP"
-}
-firebase = pyrebase.initialize_app(firebaseConfig)
-db = firebase.database()
 
 def send_email(room_type,hostel_name):
     subject = "HostelMandu: Room Booked"
