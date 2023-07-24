@@ -11,7 +11,7 @@ col1, col2 = st.columns([1, 1])
 with col1:
     # Page title and team members
     st.markdown("<h1 style='text-align: center; color: teal;'>Hostelmanu</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center; color: red;'>About Us</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: yellow;'>About Us</h3>", unsafe_allow_html=True)
     # Home page content
     st.write("Welcome to the Hostel Finder application!🙏")
     st.markdown("The project is a **hostel finder** application designed to assist **:violet[college students]** in **__[finding suitable hostels near their college__** that fit their **:blue[budget and room-sharing preferences]**. It provides a user-friendly interface where students can input their college name, preferred room type (**:orange[__single, 2-sharing, or 3-sharing__)]**, and **:green[price range.]**")
