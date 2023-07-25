@@ -135,7 +135,7 @@ def main():
         st.session_state['signout'] = False
 
     if not st.session_state["signedout"]:
-        choice = st.sidebar.radio('', ['Login', 'Sign up', 'Reset'],horizontal= True)
+        choice = st.sidebar.radio('Choose an option', ['Login', 'Sign up', 'Reset'],horizontal= True)
         if choice == 'Sign up':
             sign_up()
         elif choice == 'Login':
