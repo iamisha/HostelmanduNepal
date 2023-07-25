@@ -54,7 +54,7 @@ auth_pyrebase = firebase.auth()
 # Check if the Firebase app is already initialized
 if not firebase_admin._apps:
     # Initialize Firebase with the Admin SDK
-    cred = credentials.Certificate("pages/hostelmandunepal-e2d8b-firebase-adminsdk-unh3k-012ed757ab.json")
+    cred = credentials.Certificate("pages/hostelmandunepal-e2d8b-firebase-adminsdk-unh3k-1ca7b0e72f.json")
     firebase_admin.initialize_app(cred)
 
 def login():
