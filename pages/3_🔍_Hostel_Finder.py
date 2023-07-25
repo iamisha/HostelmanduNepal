@@ -156,9 +156,11 @@ def main():
         else:
             st.success("Here are the matching hostels:")
             for _, hostel_name, hostel_location, price, hostel_gender in filtered_hostels:
-                hostel_data = [{"Hostel Name": hostel_name, "Location": hostel_location, room_type +" Room Price": price, "Gender": hostel_gender} ]
-                st.table(hostel_data)
-                st.button("Book Hostel", key=f"{hostel_name}-{room_type}", on_click=book_room, args=(hostel_name, college_name, room_type))
+            hostel_data = [{"Hostel Name": hostel_name, "Location": hostel_location, room_type +" Room Price": price, "Gender": hostel_gender}]
+            st.markdown("<div style='border: 2px solid #2e6c80; border-radius: 10px; padding: 10px; margin: 10px; background-color: #f2f2f2;'>", unsafe_allow_html=True)
+            st.table(hostel_data)
+            st.button("Book Hostel", key=f"{hostel_name}-{room_type}", on_click=book_room, args=(hostel_name, college_name, room_type))
+            st.markdown("</div>", unsafe_allow_html=True)
                 
 if __name__ == "__main__":
     main()
