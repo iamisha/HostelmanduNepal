@@ -96,7 +96,7 @@ def main():
 
 
     else:
-        if selected_hostel is not "":
+        if selected_hostel != "":
             st.warning("No hostel found with the selected name.")
         else:
             st.info("Please enter the available Hostel")
