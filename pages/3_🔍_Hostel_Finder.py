@@ -129,6 +129,7 @@ def book_room(hostel_name, college, room_type):
             st.error("No capacity left for the selected room type. Please choose another room type.")
 
 # Streamlit app
+# Streamlit app
 def main():
     
     st.markdown("<h1 style='text-align: center; color: teal;'>Hostel Finder</h1>", unsafe_allow_html=True)
@@ -150,7 +151,7 @@ def main():
         # Sort the filtered hostels based on gender
         filtered_hostels = sorted(filtered_hostels, key=lambda x: x[1] if x[1] else "")
 
-        # Display filtered hostels in a table
+        # Display filtered hostels in a vertical layout with CSS styles
         if not filtered_hostels:
             st.warning("No hostels found matching your criteria.")
         else:
@@ -158,10 +159,11 @@ def main():
             for _, hostel_name, hostel_location, price, hostel_gender in filtered_hostels:
                 st.markdown("<div style='border: 2px solid #2e6c80; border-radius: 10px; padding: 10px; margin: 10px; background-color: #f2f2f2;'>", unsafe_allow_html=True)
                 st.markdown(f"<h3>{hostel_name}</h3>")
-                st.markdown(f"<p><strong>Location:</strong> {hostel_location}</p>")
-                st.markdown(f"<p><strong>{room_type.capitalize()} Room Price:</strong> {price}</p>")
-                st.markdown(f"<p><strong>Gender:</strong> {hostel_gender.capitalize()}</p>")
+                st.markdown(f"<p style='font-size: 18px;'><strong>Location:</strong> {hostel_location}</p>")
+                st.markdown(f"<p style='font-size: 18px;'><strong>{room_type.capitalize()} Room Price:</strong> {price}</p>")
+                st.markdown(f"<p style='font-size: 18px;'><strong>Gender:</strong> {hostel_gender.capitalize()}</p>")
                 st.button("Book Hostel", key=f"{hostel_name}-{room_type}", on_click=book_room, args=(hostel_name, college_name, room_type))
                 st.markdown("</div>", unsafe_allow_html=True)
+               
 if __name__ == "__main__":
     main()
