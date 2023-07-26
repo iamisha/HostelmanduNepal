@@ -157,7 +157,7 @@ def main():
             st.success("Here are the matching hostels:")
             for _, hostel_name, hostel_location, price, hostel_gender in filtered_hostels:
                 st.markdown("<div style='border: 2px solid #2e6c80; border-radius: 10px; padding: 10px; margin: 10px; background-color: #f2f2f2;'>", unsafe_allow_html=True)
-                st.markdown(f"<h3>{hostel_name}</h3>", unsafe_allow_html=True)
+                st.markdown(f"<h3 style='color: #d68910;'>{hostel_name}</h3>", unsafe_allow_html=True)
                 st.markdown(f"<p style='font-size: 18px;'><strong>Location:</strong> {hostel_location}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p style='font-size: 18px;'><strong>{room_type.capitalize()} Room Price:</strong> {price}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p style='font-size: 18px;'><strong>Gender:</strong> {hostel_gender.capitalize()}</p>", unsafe_allow_html=True)
