@@ -2,6 +2,10 @@ import pyrebase
 import streamlit as st
 from firebase_handler.database_handler import insert_data_to_database
 
+# Initialize session state
+if 'signout' not in st.session_state:
+    st.session_state.signout = False
+
 if st.session_state.signout:
         st.success('You are logged in as ' + st.session_state.username +", Welcome!", icon="✅")
         st.sidebar.text(f"Email id: {st.session_state.useremail}")

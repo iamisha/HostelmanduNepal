@@ -6,6 +6,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from firebase_handler.database_handler import db
 
+# Initialize session state
+if 'signout' not in st.session_state:
+    st.session_state.signout = False
 
 
 if st.session_state.signout:

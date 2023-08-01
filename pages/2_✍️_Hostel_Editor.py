@@ -12,6 +12,9 @@ from firebase_handler.database_handler import (
     update_price_capacity_avialability,
 )
 
+# Initialize session state
+if 'signout' not in st.session_state:
+    st.session_state.signout = False
 
 
 if st.session_state.signout:
