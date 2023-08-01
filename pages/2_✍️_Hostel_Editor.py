@@ -16,6 +16,8 @@ from firebase_handler.database_handler import (
 if 'signout' not in st.session_state:
     st.session_state.signout = False
 
+if 'username' not in st.session_state:
+    st.session_state.username = ''
 
 if st.session_state.signout:
         st.success('You are logged in as ' + st.session_state.username +", Welcome!", icon="✅")
