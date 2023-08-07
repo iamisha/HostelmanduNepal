@@ -15,7 +15,7 @@ with col1:
     # Home page content
     st.write("Welcome to the Hostel Finder application!🙏")
     st.markdown("The project is a **hostel finder** application designed to assist **:violet[college students]** in **__[finding suitable hostels near their college__** that fit their **:blue[budget and room-sharing preferences]**. It provides a user-friendly interface where students can input their college name, preferred room type (**:orange[__single, 2-sharing, or 3-sharing__)]**, and **:green[price range.]**")
-    st.caption("Copyright © 2023 Hostelmandu. All rights reserved. This application is designed and developed by Team Let Us: Isha Hitang, Priyanka Sinha, and Sahishna Budhathoki.  For educational purposes only.", unsafe_allow_html=True)
+    st.caption("Copyright © 2023 Hostelmandu. All rights reserved.", unsafe_allow_html=True)
 with col2:
     def load_lottieurl(url: str):
         r = requests.get(url)
